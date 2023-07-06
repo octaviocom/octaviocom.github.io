@@ -1,6 +1,15 @@
 let windowThird=546
+
+let marioY=350
+
+let mario
+
+function preload(){
+  mario = loadImage('mario.png')
+}
 function setup() {
   createCanvas(windowWidth,windowHeight);
+  imageMode(CENTER)
 }
 
 function draw() {
@@ -49,14 +58,14 @@ function draw() {
   
   //light bushes
    fill(137, 245, 91)
-  // triangle(61,374,118,374,88,342)
-  // triangle(90,374,147,374,119, 342)
-  // triangle(120,374, 180, 374, 150,342)
-  // triangle(403,374, 463, 374, 433,342)
-  for(i=61; b=118; c=88; i<windowWidth; b<windowWidth; c<windowWidth; i=i+windowThird; b=b+windowThird; c=c+windowThird){
-    triangle(i,374,b,374,c,342)
-  }
-   //for(i=90;b=374;c=147; i<windowWidth; i=i+windowThird){
+  triangle(61,374,118,374,88,342)
+  triangle(90,374,147,374,119, 342)
+  triangle(120,374, 180, 374, 150,342)
+  triangle(403,374, 463, 374, 433,342)
+  // for(i=61; b=118; c=88; i<windowWidth; b<windowWidth; c<windowWidth; i=i+windowThird; b=b+windowThird; c=c+windowThird){
+  //   triangle(i,374,b,374,c,342)
+  // }
+  //  for(i=90;b=374;c=147; i<windowWidth; i=i+windowThird){
   //   triangle(i,374,147,374,119, 342)
   // }
   // for(i=120; i<windowWidth; i=i+windowThird){
@@ -69,10 +78,14 @@ function draw() {
 
   //mario
   fill(237, 21, 21)
+  image(mario, mouseX, marioY, 50, 50)
   if(mouseIsPressed == true){
-    ellipse(mouseX, 207, 30, 50)
+    marioY = 207
   }else{
-    ellipse(mouseX, 350, 30, 50)
+    marioY = 350
+  }
+  if(mouseIsPressed == false){
+    marioY = 350
   }
   
   
