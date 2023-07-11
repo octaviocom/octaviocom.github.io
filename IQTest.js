@@ -31,6 +31,9 @@ createCanvas(windowWidth, windowHeight)
 textAlign(CENTER)
 imageMode(CENTER)
 
+	startScreenBool = startScreen()
+	QuestionIBool = QuestionI()
+
 
 
 
@@ -40,17 +43,20 @@ imageMode(CENTER)
 function draw(){
 	print(mouseX, mouseY)
 
-	if(startScreenBool = true){
-		startScreen()
-	}
+
+
 	
 	
 
 }
 
 
-function nextScene(){
+function keyPressed(){
 
+	if (key == 'e'){
+		startScreenBool = false 
+		QuestionIBool = true
+	}
 }
 
 function startScreen(){
@@ -64,15 +70,10 @@ function startScreen(){
 		text('Designed by: Octavio Combellas-Jaimes', windowWidth/2, windowHeight/4+50)
 		image(brain, windowWidth/4 - 30, windowHeight/2, 350, 300)
 		image(intelligence , windowWidth*3/4+30, windowHeight/2, 350, 300)
-		if(keyPressed){
-			startScreenBool = false
-			QuestionIBool = false
-
-		}
-
+		2
 		
 }
 
-// function QuestionI(){
-// 	image(question, windowWidth/2, windowHeight/2, 1640, 1000)
-// }
+function QuestionI(){
+	image(question, windowWidth/2, windowHeight/2, 1640, 1000)
+}
