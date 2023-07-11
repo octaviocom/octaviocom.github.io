@@ -22,7 +22,7 @@ function preload(){
 	brain = loadImage('brain.png')
 	intelligence = loadImage('intelligence.png')
 	elegant = loadImage('elegant.png')
-	question = loadImage('Question.png')
+	question = loadImage('question.png')
 }
 
 
