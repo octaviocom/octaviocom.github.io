@@ -34,6 +34,7 @@ let xButton
 let buttonX
 let imgs = []
 let randImage = 0
+let iRandom = false
 
 let inp1
 let inp2
@@ -52,6 +53,7 @@ let inp9
 // let checkText6
 // let checkText7
 // let checkText8
+let chkText
 let typed
 let myButton
 
@@ -160,6 +162,9 @@ function draw(){
 	}
 	if (endScreenBool == true){
 		endScreen()
+	}
+	if (iRandom == true){
+		randomImage()
 	}
 
 	
@@ -273,7 +278,7 @@ function QuestionI(){
 	
 	}
 
-	// function checkText1(){
+	// function chkText(){
 	// 	if(inp1.value('5 cents')){
 	// 		QuestionII()
 	// 	}else{
@@ -457,6 +462,11 @@ function endScreen(){
 	image(adv7, adv1.width+400, 800, 321, 213)
 	image(adv8, adv1. width + 800, 800, 321, 213)
 	image(adv9, windowWidth/2, windowHeight/2, 1400, 900)
+	fill(0)
+	textSize(100)
+	text('GO ON NOW', windowWidth/2, windowHeight/2-100)
+	text('CLICK NOW', windowWidth/2, windowHeight/2)
+	text('YOU ARE STUCK', windowWidth/2, windowHeight/2+300)
 	// image(xButton, windowWidth*12/13, windowHeight/30, 50, 50)
 	buttonX.show()
 	buttonX.position(windowWidth*12/13, windowHeight/50)
@@ -480,7 +490,7 @@ function endScreen(){
 
 function randomImages(){
 	for(let i=0; i<x.length; i++)
-		
+
 		image(random(imgs), x[i], y[i], 321, 213)
 
 
